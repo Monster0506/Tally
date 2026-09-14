@@ -2,7 +2,9 @@
 
 Admin should be able to download a excel/ a type of doc that will have all the info. 
 
-No need of the pen paper method
+No need of the pen paper method.
+
+Make this a by user thing as multiple people work the same position at same time but with different Fusion ID's
 
 ```
 User ID
@@ -85,3 +87,17 @@ Fusion_reports(
 )
 ```
 # Tech Stack
+
+## PyPDF
+    PDF parsing for fusion daily balance reports.
+    If possible should only parse the date, time, user name, location, and totals for the specific transaction sections.
+
+# Flow
+ 
+User Login-> New shift -> Opening drawer -> normal shift stuff -> Closing drawer -> Upload fusion daily balance report -> Balanced/Over/Under 
+
+All shifts being saved and user able to see previous shifts.
+
+# Backend expectations
+1.Totals for all the reports 
+2. Math behind all the tally marks (Closing total - Opening total == Fusion cash total)
