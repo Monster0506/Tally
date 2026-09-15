@@ -35,7 +35,16 @@ Amount of cash earned by the facility (per user and per shift) [Helps compare wi
 # Database schema ?
 
 ```sql
+
+Users(
+    POS_username (Primary key)
+    Name
+    Date
+    Safe_ID
+)
+
 Opening_drawer(
+    POS_username (Foreign key)
     Name
     Date
     Shift_start_time
@@ -55,6 +64,7 @@ Opening_drawer(
 )
 
 Closing_drawer(
+    POS_username (Foreign key)
     Name
     Date
     Shift_start_time
@@ -74,6 +84,7 @@ Closing_drawer(
 )
 
 Fusion_reports(
+    POS_username (Foreign key)
     Name
     Date
     Shift_start_time
@@ -99,5 +110,13 @@ User Login-> New shift -> Opening drawer -> normal shift stuff -> Closing drawer
 All shifts being saved and user able to see previous shifts.
 
 # Backend expectations
+
 1.Totals for all the reports 
 2. Math behind all the tally marks (Closing total - Opening total == Fusion cash total)
+
+# Random
+
+1.Use pypdf and put parsed data to json?
+2.Once database finalized json->tables
+3.frontend->json->tables
+4.Date and time parse from pdf?
