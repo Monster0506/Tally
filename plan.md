@@ -21,16 +21,16 @@ Amount of cash earned by the facility (per user and per shift) [Helps compare wi
 
 # Things to know
 
-## 1. Reports 
+## Reports 
 
-### 1.Balance Reports (from the POS)
-            1.Admin report: This is the report for all users. Includes **ALL** transactions. 
-            2.User report: This report only includes the transactions occurred during a shift for a specific user.
-### 2. Shift Reports
-            Each user filles out a shift report (currently pen paper) which has opening and closing counts, section where physical cash made during the shift is compared with what Fusion (POS) says what is earned.
-### 3. Online and In-person sales [types of sales fusion differentiates into]
-            1. Online is the part where all transactions which occurred on the website or any place that is not the actual in person sales. Fusion still clubs it based on who was logged in at that time.
-            2. In-person sales is the part where all transactions are recorded when the exchange took place **in front** of the user.
+1. Balance Reports (from the POS)
+Admin report: This is the report for all users. Includes **ALL** transactions. 
+User report: This report only includes the transactions occurred during a shift for a specific user.
+2. Shift Reports
+Each user filles out a shift report (currently pen paper) which has opening and closing counts, section where physical cash made during the shift is compared with what Fusion (POS) says what is earned.
+3. Online and In-person sales [types of sales fusion differentiates into]
+Online is the part where all transactions which occurred on the website or any place that is not the actual in person sales. Fusion still clubs it based on who was logged in at that time.
+In-person sales is the part where all transactions are recorded when the exchange took place **in front** of the user.
 
 # Database schema ?
 
@@ -39,14 +39,11 @@ Amount of cash earned by the facility (per user and per shift) [Helps compare wi
 Users(
     POS_username (Primary key)
     Name
-    Date
     Safe_ID
 )
 
 Opening_drawer(
     POS_username (Foreign key)
-    Name
-    Date
     Shift_start_time
     Shift_end_time
     Safe_ID
@@ -65,8 +62,6 @@ Opening_drawer(
 
 Closing_drawer(
     POS_username (Foreign key)
-    Name
-    Date
     Shift_start_time
     Shift_end_time
     Safe_ID
@@ -85,10 +80,6 @@ Closing_drawer(
 
 Fusion_reports(
     POS_username (Foreign key)
-    Name
-    Date
-    Shift_start_time
-    Shift_end_time
     Safe_ID
     Fusion_cash [Physical money made by the user according to fusion] {Should match this:{C_Total - O_Total= Fusion_cash}}
     Visa
@@ -111,12 +102,12 @@ All shifts being saved and user able to see previous shifts.
 
 # Backend expectations
 
-1.Totals for all the reports 
+1. Totals for all the reports 
 2. Math behind all the tally marks (Closing total - Opening total == Fusion cash total)
 
 # Random
 
-1.Use pypdf and put parsed data to json?
-2.Once database finalized json->tables
-3.frontend->json->tables
-4.Date and time parse from pdf?
+1. Use pypdf and put parsed data to json?
+2. Once database finalized json->tables
+3. frontend->json->tables
+4. Date and time parse from pdf?
