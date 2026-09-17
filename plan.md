@@ -14,10 +14,10 @@ Date
 Amount of cash earned by the facility (per user and per shift) [Helps compare with the POS report generated for the admin by the POS ] 
 ```
 
-# User differentiations
+# User differentiation
 
-1. Admin: downloads teh daily/weekly files and compares with POS given report. Helps debug what went wrong and where.
-2. User: Uses software and filles the report, the report is then used by the admin to compare with teh POS report.
+1. Admin: downloads the daily/weekly files and compares with POS given report. Helps debug what went wrong and where.
+2. User: Uses software and fills out the report, the report is then used by the admin to compare with the POS report.
 
 # Things to know
 
@@ -27,7 +27,7 @@ Amount of cash earned by the facility (per user and per shift) [Helps compare wi
 Admin report: This is the report for all users. Includes **ALL** transactions. 
 User report: This report only includes the transactions occurred during a shift for a specific user.
 2. Shift Reports
-Each user filles out a shift report (currently pen paper) which has opening and closing counts, section where physical cash made during the shift is compared with what Fusion (POS) says what is earned.
+Each user fills out a shift report (currently pen paper) which has opening and closing counts, section where physical cash made during the shift is compared with what Fusion (POS) says what is earned.
 3. Online and In-person sales [types of sales fusion differentiates into]
 Online is the part where all transactions which occurred on the website or any place that is not the actual in person sales. Fusion still clubs it based on who was logged in at that time.
 In-person sales is the part where all transactions are recorded when the exchange took place **in front** of the user.
@@ -103,7 +103,7 @@ All shifts being saved and user able to see previous shifts.
 # Backend expectations
 
 1. Totals for all the reports 
-2. Math behind all the tally marks (Closing total - Opening total == Fusion cash total)
+2. Math behind all the tally marks ($\text{Closing Total} - \text{Opening Total} = \text{Fusion Cash Total}$)
 
 # Random
 
