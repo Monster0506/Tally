@@ -103,7 +103,7 @@ All shifts being saved and user able to see previous shifts.
 # Backend expectations
 
 1. Totals for all the reports 
-2. Math behind all the tally marks (Closing Total - Opening Total = Fusion Cash Total)
+2. Math behind all the tally marks (Closing Total - Opening Total == Fusion Cash Total)
 
 # Random
 
